@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botão e Modal Simples</title>
+    
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Botão que aciona o modal -->
+    <button class="btn-abrir" id="btnAbrir">Clique para abrir o Modal</button>
+
+    <!-- Estrutura do Modal -->
+    <div class="modal-overlay" id="meuModal">
+        <div class="modal-content">
+            <h2>Ação Concluída!</h2>
+            <p>Este é um exemplo de modal simples com HTML, CSS e JS integrados.</p>
+            <button class="btn-fechar" id="btnFechar">Fechar Janela</button>
+        </div>
+    </div>
+
+    <!-- JavaScript embutido -->
+    <script>
+        const modal = document.getElementById('meuModal');
+        const btnAbrir = document.getElementById('btnAbrir');
+        const btnFechar = document.getElementById('btnFechar');
+
+        // Função para abrir
+        btnAbrir.onclick = function() {
+            modal.classList.add('show');
+        }
+
+        // Função para fechar
+        btnFechar.onclick = function() {
+            
+        }
+
+        // Fechar se o usuário clicar fora da caixa branca
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.classList.remove('show');
+            }
+        }
+    </script>
+
+</body>
+</html>
