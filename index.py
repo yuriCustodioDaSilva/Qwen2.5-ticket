@@ -45,9 +45,15 @@ está cobrando. Podem ver isso com prioridade máxima? Obrigado!
 """
 
 print("Filtrando ruido do ticket...")
+
+PROMPT_TRIAGEM = """Extraia os dados do relato seguindo estritamente este formato:
+ARQUIVO: [nome do arquivo]
+TIPO: [Bug do Sistema ou Erro Operacional]
+ERRO TÉCNICO: [descrição curta do problema]"""
+
 resumo = executar_agente(
-    "Analista de Triagem", 
-    "Extraia apenas o arquivo e o erro técnico deste relato.",
+    "Analista de Triagem Especializado", 
+    PROMPT_TRIAGEM,
     ticket_sujo, 64
 )
 print(f"-> Foco técnico: {resumo}")
